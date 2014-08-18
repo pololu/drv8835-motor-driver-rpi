@@ -5,7 +5,7 @@ Release Date: 2014-08-18
 
 h2. Summary
 
-This is a library written in Python that interfaces with the "Pololu DRV8835 Dual Motor Driver Kit for Raspberry Pi Model B+":http://www.pololu.com/product/2753.  The library allows you to write a Python program that runs on the "Raspberry Pi Model B+":http://www.pololu.com/product/2752 and controls the speed of boths motors.  This library supports both Python 2.7.x and Python 3.2.x.
+This library runs on the "Raspberry Pi Model B+":http://www.pololu.com/product/2752 and provides functions for controlling both channels of the "Pololu DRV8835 Dual Motor Driver Kit for Raspberry Pi Model B+":http://www.pololu.com/product/2753.  This library supports both Python 2.7.x and Python 3.2.x.
 
 Programs that use this library will need to be run as the root user so they can access the GPIO pins.
 
@@ -32,7 +32,7 @@ git clone git://git.drogon.net/wiringPi
 cd wiringPi
 ./build</pre>
 
-To download and install WiringPi2-Python for Python 2.7.x, run:
+To download and install WiringPi2-Python, run:
 
 <pre>
 git clone https://github.com/Gadgetoid/WiringPi2-Python.git
@@ -40,7 +40,7 @@ cd WiringPi2-Python
 sudo apt-get install python-dev python-setuptools
 sudo python setup.py install</pre>
 
-To download and install the pololu_drv8835_rpi library for Python 2.7.x, run:
+To download and install the pololu_drv8835_rpi library, run:
 
 <pre>
 git clone https://github.com/pololu/pololu-drv8835-rpi-python.git
