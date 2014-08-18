@@ -1,0 +1,84 @@
+Python library for the Pololu DRV8835 Dual Motor Driver Kit for Raspberry Pi Model B+
+Version: 1.0.0
+Release Date: 2014-08-18
+"www.pololu.com":http://www.pololu.com/
+
+h2. Summary
+
+This is a library written in Python that interfaces with the "Pololu DRV8835 Dual Motor Driver Kit for Raspberry Pi Model B+":http://www.pololu.com/product/2753.  The library allows you to write a Python program that runs on the "Raspberry Pi Model B+":http://www.pololu.com/product/2752 and controls the speed of boths motors.  This library supports both Python 2.7.x and Python 3.2.x.
+
+Programs that use this library will need to be run as the root user so they can access the GPIO pins.
+
+h2. Getting Started
+
+h3. Installation
+
+This library depends on "WiringPi":http://wiringpi.com/ and "WiringPi2-Python":https://github.com/Gadgetoid/WiringPi2-Python.  The instructions below explain how to install these prerequisites.
+
+These instructions assume you are using Raspbian, Debian, or some other distribution that provides the @apt-get@ command for managing packages.  If you do not have @apt-get@, you will need to use a different method to install the required packages.
+
+These instructions also assume you will use Python 2.7.x.  If you want to use Python 3.2.x, you will need to replace @python@ with @python3@ in the names of the @apt-get@ packages below and use the @python3@ command for running Python scripts.
+
+First of all, you should install git so you can easily download the source code of the required libraries.  You can make sure git is installed by running:
+
+<pre>
+sudo apt-get install git
+</pre>
+
+Next, to download and install WiringPi, run the following commands:
+
+<pre>
+git clone git://git.drogon.net/wiringPi
+cd wiringPi
+./build</pre>
+
+To download and install WiringPi2-Python for Python 2.7.x, run:
+
+<pre>
+git clone https://github.com/Gadgetoid/WiringPi2-Python.git
+cd WiringPi2-Python
+sudo apt-get install python-dev python-setuptools
+sudo python setup.py install</pre>
+
+To download and install the pololu_drv8835_rpi library for Python 2.7.x, run:
+
+<pre>
+git clone https://github.com/pololu/pololu-drv8835-rpi-python.git
+cd pololu-drv8835-rpi
+sudo python setup.py install</pre>
+
+h3. Running the example program
+
+This library comes with an example program that drives each motor in both directions.  To run the example, navigate to the pololu-drv8835-rpi-python directory and run:
+
+<pre>
+sudo python example.py</pre>
+
+h2. Library reference
+
+This library uses ultrasonic 20&nbsp;kHz PWM to drive the motors.
+
+Motor speeds in this library are represented as numbers between *-480* and *480* (inclusive).  A speed of 0 corresponds to braking.  Positive speeds correspond to current flowing from M1A/M2A to M1B/M2B, while negative speeds correspond to current flowing in the other direction.
+
+The library can be imported into a Python program with the following line:
+
+<pre>
+from pololu_drv8835_rpi import motors, MAX_SPEED</pre>
+
+After importing the library, you can use the commands below to set motor speeds:
+
+- @motors.setSpeeds(m1_speed, m2_speed)@: Set speed and direction for both motor 1 and motor 2.
+- @motors.motor1.setSpeed(speed)@: Set speed and direction for motor 1.
+- @motors.motor2.setSpeed(speed)@: Set speed and direction for motor 2.
+
+For convenience, a constant called @MAX_SPEED@ (which is equal to 480) is available on all the objects provided by this library.  It can be accessed in the following ways:
+
+- @motors.MAX_SPEED@
+- @motors.motor1.MAX_SPEED@
+- @motors.motor2.MAX_SPEED@
+
+If you are controlling multiple motor drivers, you might prefer to import the library using @import pololu_drv8835_rpi@, which requires the commands listed above to be prefixed with @pololu_drv8835_rpi.@.
+
+h2. Version history
+
+* 1.0.0 (2014-08-18): Original release.
