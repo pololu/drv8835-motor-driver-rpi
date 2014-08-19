@@ -1,4 +1,5 @@
-Python library for the Pololu DRV8835 Dual Motor Driver Kit for Raspberry Pi Model B+
+h1. Python library for the Pololu DRV8835 Dual Motor Driver Kit for Raspberry Pi Model B+
+
 Version: 1.0.0
 Release Date: 2014-08-18
 "www.pololu.com":http://www.pololu.com/
@@ -17,7 +18,7 @@ This library depends on "WiringPi":http://wiringpi.com/ and "WiringPi2-Python":h
 
 These instructions assume you are using Raspbian, Debian, or some other distribution that provides the @apt-get@ command for managing packages.  If you do not have @apt-get@, you will need to use a different method to install the required packages.
 
-These instructions also assume you will use Python 2.7.x.  If you want to use Python 3.2.x, you will need to replace @python@ with @python3@ in the names of the @apt-get@ packages below and use the @python3@ command for running Python scripts.
+These instructions also assume you will use Python <notextile>2.7.x</notextile>.  If you want to use Python <notextile>3.2.x</notextile>, you will need to replace @python@ with @python3@ in the names of the @apt-get@ packages below and use the @python3@ command for running Python scripts.
 
 First of all, you should install git so you can easily download the source code of the required libraries.  You can make sure git is installed by running:
 
@@ -32,7 +33,7 @@ git clone git://git.drogon.net/wiringPi
 cd wiringPi
 ./build</pre>
 
-To download and install WiringPi2-Python, run:
+Next, to download and install WiringPi2-Python, run:
 
 <pre>
 git clone https://github.com/Gadgetoid/WiringPi2-Python.git
@@ -40,10 +41,10 @@ cd WiringPi2-Python
 sudo apt-get install python-dev python-setuptools
 sudo python setup.py install</pre>
 
-To download and install the pololu_drv8835_rpi library, run:
+Finally, to download and install the pololu_drv8835_rpi library, run:
 
 <pre>
-git clone https://github.com/pololu/pololu-drv8835-rpi-python.git
+git clone https://github.com/pololu/pololu-drv8835-rpi.git
 cd pololu-drv8835-rpi
 sudo python setup.py install</pre>
 
@@ -71,7 +72,7 @@ After importing the library, you can use the commands below to set motor speeds:
 - @motors.motor1.setSpeed(speed)@: Set speed and direction for motor 1.
 - @motors.motor2.setSpeed(speed)@: Set speed and direction for motor 2.
 
-For convenience, a constant called @MAX_SPEED@ (which is equal to 480) is available on all the objects provided by this library.  It can be accessed in the following ways:
+For convenience, a constant called @MAX_SPEED@ (which is equal to 480) is available on all the objects provided by this library.  You can access it directly by just writing @MAX_SPEED@ if you imported it as shown above, or it can be accessed in the following ways:
 
 - @motors.MAX_SPEED@
 - @motors.motor1.MAX_SPEED@
