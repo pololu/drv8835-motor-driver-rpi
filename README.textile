@@ -45,7 +45,7 @@ Finally, to download and install the pololu_drv8835_rpi library, run:
 
 <pre>
 git clone https://github.com/pololu/drv8835-motor-driver-rpi.git
-cd pololu-drv8835-rpi
+cd drv8835-motor-driver-rpi
 sudo python setup.py install</pre>
 
 h3. Running the example program
