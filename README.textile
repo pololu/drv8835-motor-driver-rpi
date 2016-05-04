@@ -50,7 +50,7 @@ sudo python setup.py install</pre>
 
 h3. Running the example program
 
-This library comes with an example program that drives each motor in both directions.  To run the example, navigate to the pololu-drv8835-rpi-python directory and run:
+This library comes with an example program that drives each motor in both directions.  To run the example, navigate to the drv8835-motor-driver-rpi directory and run:
 
 <pre>
 sudo python example.py</pre>
