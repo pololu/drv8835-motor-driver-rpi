@@ -1,4 +1,4 @@
-import wiringpi2
+import wiringpi
 
 # Motor speeds for this library are specified as numbers
 # between -MAX_SPEED and MAX_SPEED, inclusive.
@@ -11,16 +11,16 @@ def io_init():
   if io_initialized:
     return
 
-  wiringpi2.wiringPiSetupGpio()
-  wiringpi2.pinMode(12, wiringpi2.GPIO.PWM_OUTPUT)
-  wiringpi2.pinMode(13, wiringpi2.GPIO.PWM_OUTPUT)
+  wiringpi.wiringPiSetupGpio()
+  wiringpi.pinMode(12, wiringpi.GPIO.PWM_OUTPUT)
+  wiringpi.pinMode(13, wiringpi.GPIO.PWM_OUTPUT)
 
-  wiringpi2.pwmSetMode(wiringpi2.GPIO.PWM_MODE_MS)
-  wiringpi2.pwmSetRange(MAX_SPEED)
-  wiringpi2.pwmSetClock(2)
+  wiringpi.pwmSetMode(wiringpi.GPIO.PWM_MODE_MS)
+  wiringpi.pwmSetRange(MAX_SPEED)
+  wiringpi.pwmSetClock(2)
 
-  wiringpi2.pinMode(5, wiringpi2.GPIO.OUTPUT)
-  wiringpi2.pinMode(6, wiringpi2.GPIO.OUTPUT)
+  wiringpi.pinMode(5, wiringpi.GPIO.OUTPUT)
+  wiringpi.pinMode(6, wiringpi.GPIO.OUTPUT)
 
   io_initialized = True
 
@@ -42,8 +42,8 @@ class Motor(object):
             speed = MAX_SPEED
 
         io_init()
-        wiringpi2.digitalWrite(self.dir_pin, dir_value)
-        wiringpi2.pwmWrite(self.pwm_pin, speed)
+        wiringpi.digitalWrite(self.dir_pin, dir_value)
+        wiringpi.pwmWrite(self.pwm_pin, speed)
 
 class Motors(object):
     MAX_SPEED = _max_speed

@@ -1,7 +1,7 @@
 h1. Python library for the Pololu DRV8835 Dual Motor Driver Kit for Raspberry Pi
 
-Version: 1.0.0
-Release Date: 2014-08-18
+Version: 2.0.0
+Release Date: 2016-05-04
 "www.pololu.com":http://www.pololu.com/
 
 h2. Summary
@@ -14,32 +14,17 @@ h2. Getting Started
 
 h3. Installation
 
-This library depends on "WiringPi":http://wiringpi.com/ and "WiringPi2-Python":https://github.com/Gadgetoid/WiringPi2-Python.  The instructions below explain how to install these prerequisites.
+This library depends on "WiringPi":http://wiringpi.com/ and "WiringPi-Python":https://github.com/WiringPi/WiringPi-Python.  The instructions below explain how to install these prerequisites.
 
 These instructions assume you are using Raspbian, Debian, or some other distribution that provides the @apt-get@ command for managing packages.  If you do not have @apt-get@, you will need to use a different method to install the required packages.
 
-These instructions also assume you will use Python <notextile>2.7.x</notextile>.  If you want to use Python <notextile>3.2.x</notextile>, you will need to replace @python@ with @python3@ in the names of the @apt-get@ packages below and use the @python3@ command for running Python scripts.
+These instructions also assume you will use Python <notextile>2.x</notextile>.  If you want to use Python <notextile>3.x</notextile>, you will need to replace @python@ with @python3@ in the names of the @apt-get@ packages below, and use the @python3@ command instead of @python@ for running Python scripts, and use the @pip3@ command instead of @pip@ to install pip packages.
 
-First of all, you should install git so you can easily download the source code of the required libraries.  You can make sure git is installed by running:
-
-<pre>
-sudo apt-get install git
-</pre>
-
-Next, to download and install WiringPi, run the following commands:
+To download and install WiringPi-Python, run:
 
 <pre>
-git clone git://git.drogon.net/wiringPi
-cd wiringPi
-./build</pre>
-
-Next, to download and install WiringPi2-Python, run:
-
-<pre>
-git clone https://github.com/Gadgetoid/WiringPi2-Python.git
-cd WiringPi2-Python
-sudo apt-get install python-dev python-setuptools
-sudo python setup.py install</pre>
+sudo apt-get install python-dev python-pip
+sudo pip install wiringpi</pre>
 
 Finally, to download and install the pololu_drv8835_rpi library, run:
 
@@ -82,4 +67,5 @@ If you are controlling multiple motor drivers, you might prefer to import the li
 
 h2. Version history
 
+* 2.0.0 (2016-05-04): Updated the library code and instructions to work with "WiringPi-Python":https://github.com/WiringPi/WiringPi-Python instead of the deprecated "WiringPi2-Python":https://github.com/Gadgetoid/WiringPi2-Python.
 * 1.0.0 (2014-08-18): Original release.
