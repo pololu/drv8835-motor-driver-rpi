@@ -6,7 +6,7 @@ Release Date: 2016-05-04
 
 h2. Summary
 
-This library runs on the "Raspberry Pi":http://www.pololu.com/product/2752 (Model B+, A+, or Pi 2) and provides functions for controlling both channels of the "Pololu DRV8835 Dual Motor Driver Kit for Raspberry Pi":http://www.pololu.com/product/2753.  This library supports both Python 2.7.x and Python <notextile>3.2.x</notextile>.
+This library runs on the "Raspberry Pi":http://www.pololu.com/product/2757 (Model B+, A+, Pi 2, or Pi 3) and provides functions for controlling both channels of the "Pololu DRV8835 Dual Motor Driver Kit for Raspberry Pi":http://www.pololu.com/product/2753.  This library supports both Python 2 and Python 3.
 
 Programs that use this library will need to be run as the root user so they can access the GPIO pins.
 
@@ -18,9 +18,9 @@ This library depends on "WiringPi":http://wiringpi.com/ and "WiringPi-Python":ht
 
 These instructions assume you are using Raspbian, Debian, or some other distribution that provides the @apt-get@ command for managing packages.  If you do not have @apt-get@, you will need to use a different method to install the required packages.
 
-These instructions also assume you will use Python <notextile>2.x</notextile>.  If you want to use Python <notextile>3.x</notextile>, you will need to replace @python@ with @python3@ in the names of the @apt-get@ packages below, and use the @python3@ command instead of @python@ for running Python scripts, and use the @pip3@ command instead of @pip@ to install pip packages.
+These instructions also assume you will use Python 2.  If you want to use Python 3, you will need to replace @python@ with @python3@ in the names of the @apt-get@ packages below, and use the @python3@ command instead of @python@ for running Python scripts, and use the @pip3@ command instead of @pip@ to install pip packages.
 
-To download and install WiringPi-Python, run:
+First, to download and install WiringPi-Python, run:
 
 <pre>
 sudo apt-get install python-dev python-pip
